@@ -32,8 +32,9 @@ body {
   transition: all 0.1s ease-in-out;
 
   &:hover {
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     transform: translateY(-1px);
+    scale: 1.2;
   }
 
   &:active {
@@ -53,12 +54,7 @@ body {
 }
 
 .modal {
-  background-color: #fff;
-  width: 70%;
-  max-width: 500px;
-  max-height: 300px;
-  padding: 40px 30px;
-  border-radius: 10px;
+  display: flex;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -68,7 +64,6 @@ body {
 
   img {
     border-radius: 5px;
-    width: 100%;
   }
 
   svg {
