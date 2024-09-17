@@ -2,11 +2,34 @@ import React, { useState } from "react";
 import "./index.scss";
 
 function App() {
+  const arr = ["😘", "😍", "😁", "😂", "😉", "😎", "🥰", "🤩", "😶‍🌫️", "🫠"];
+  const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
+  const [emoji, setEmoji] = useState(arr[0]);
+
+  const rotate = () => {
+    let index = count + 1;
+    if (index >= arr.length) {
+      index = 0;
+    }
+    setCount(index);
+    setEmoji(arr[index]);
+  };
+
   return (
     <div className="App">
       <button onClick={() => setOpen(true)} className="open-modal-btn">
         ✨ Открыть окно
+      </button>
+      <h1>{count}</h1>
+      <h1>{emoji}</h1>
+      <button
+        onClick={() => {
+          rotate();
+        }}
+        className="open-modal-btn"
+      >
+        Press Me
       </button>
 
       <div className={`overlay animated ${open ? "show" : ""}`}>
